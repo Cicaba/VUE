@@ -14,10 +14,10 @@ Vue.use(ElementUI)
 Vue.directive('drag', {
   // 当绑定元素插入到 DOM 中。
   bind: function (el, binding, vnode) {
-    // console.log(binding, vnode)
     let X,Y;
     el.childNodes[0].childNodes[0].addEventListener("mousedown",mousedown,false);
     function mousedown(e){
+      console.log(el.childNodes[0].style.left,el.childNodes[0].style.top)
       X = e.clientX;
       Y = e.clientY; 
       mouse(e.path[1])
