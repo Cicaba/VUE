@@ -11,16 +11,34 @@ import 'element-ui/lib/theme-default/index.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 /* eslint-disable no-new */
-Vue.directive('test', {
+Vue.directive('drag', {
   // 当绑定元素插入到 DOM 中。
   bind: function (el, binding, vnode) {
-    el.childNodes[0].addEventListener("click",()=>{
-
+    // console.log(binding, vnode)
+    let X,Y;
+    el.childNodes[0].childNodes[0].addEventListener("mousedown",mousedown,false);
+    function mousedown(e){
+      X = e.clientX;
+      Y = e.clientY; 
+      mouse(e.path[1])
+    };
+    function mousemove(e){
+      let oldOffsetX = (document.querySelector('body').clientWidth-el.childNodes[0].clientWidth);
+      let oldOffsetY = (document.querySelector('body').clientHeight)*0.15;
+      let offsetX = oldOffsetX+(e.clientX - X);
+      let offsetY = oldOffsetY+(e.clientY - Y);
+      el.childNodes[0].style.left = offsetX+'px';
+      el.childNodes[0].style.top = offsetY+'px';
+    };
+    let mouse = function(el){
+      el.childNodes[0].addEventListener("mousemove",mousemove,false)
+    };
+    el.childNodes[0].childNodes[0].addEventListener('mouseup',e=>{
+      el.childNodes[0].childNodes[0].removeEventListener('mousemove',mousemove,false);
+      // el.childNodes[0].childNodes[0].removeEventListener('mousedown',mousedown,false);
     })
-  },
-    inserted: function (...el) {
-    // 聚焦元素
   }
+  
 })
 new Vue({
   el: '#app',

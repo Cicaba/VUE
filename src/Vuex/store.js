@@ -23,3 +23,5 @@ export default new Vuex.Store({
   	//类似mutations//可以执行异步操作(使用dispatch()调用返回一个promise)
   }
 })
+
+
