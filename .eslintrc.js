@@ -1,3 +1,4 @@
+
 module.exports = {
     // 默认情况下，ESLint会在所有父级组件中寻找配置文件，一直到根目录。ESLint一旦发现配置文件中有 "root": true，它就会停止在父级目录中寻找。
     root: true,
@@ -26,13 +27,13 @@ module.exports = {
     ],
     // add your custom rules here
     'rules': {
-    
+        "keyword-spacing":0,//关键字前后空格
         'no-tabs': 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 0 : 0,
         // 关闭语句强制分号结尾
         "semi": [0],
         //空行最多不能超过100行
-        "no-multiple-empty-lines": [0, { "max": 100 }],
+        "no-multiple-empty-lines": [2, { "max": 1 }],
         //关闭禁止混用tab和空格
         "no-mixed-spaces-and-tabs": [0],
         "no-alert": 0,//禁止使用alert confirm prompt
@@ -127,7 +128,7 @@ module.exports = {
         "no-unneeded-ternary": 0,//禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
         "no-unreachable": 0,//不能有无法执行的代码
         "no-unused-expressions": 0,//禁止无用的表达式
-        "no-unused-vars": [0, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
+        "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
         "no-use-before-define": 0,//未定义前不能使用
         "no-useless-call": 0,//禁止不必要的call和apply
         "no-void": 0,//禁用void操作符
