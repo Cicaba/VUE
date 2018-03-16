@@ -25,5 +25,5 @@ new Vue({
 })
 
 window.addEventListener("resize", function () {
-  store.commit("MENU_SET_CONTENTHEIGHT");
+  store.dispatch("resizeWindow");
 }, false)

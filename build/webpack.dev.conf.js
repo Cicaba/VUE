@@ -33,7 +33,7 @@ module.exports = merge(baseWebpackConfig, {
       inject: true
     }),
     new FriendlyErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    // new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.ProvidePlugin({
       axios:"axios",
       jQuery: "jquery",

@@ -16,7 +16,7 @@ export default {
     }
   },
   created:function(){
-    console.log(axios)
+    console.log(this.$store.getters.height)
   },
   methods:{
     offDialog(){
