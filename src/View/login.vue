@@ -15,6 +15,9 @@ export default {
       dialogVisble:false
     }
   },
+  created:function(){
+    console.log(axios)
+  },
   methods:{
     offDialog(){
       this.$refs.dialogVisble.offDialog()
