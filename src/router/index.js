@@ -7,7 +7,8 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'Login',
-    component: Login
+    component: Login,
+    props: (route) => ({ query: route })
     /*children:[{
     	path:"",
     	name:"Dialog",

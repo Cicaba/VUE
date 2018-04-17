@@ -12,7 +12,7 @@ import 'element-ui/lib/theme-default/index.css';
 //关闭生产模式下的提示
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
-window.formatDate = formatDate;
+Vue.prototype.formatDate = formatDate;
 Vue.prototype.point = point;
 /* eslint-disable no-new */
 Vue.directive('drag', {

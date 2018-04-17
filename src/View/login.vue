@@ -12,13 +12,15 @@ export default {
   components: {
     testDialog
   },
+  props: ['id', 'name', 'query'],
   data() {
     return {
       dialogVisble: false
     };
   },
   created: function() {
-    console.log(formatDate(new Date(), 'yyyy-MM-dd'));
+    console.log(this.$route.params, this.$props);
+    console.log(this.formatDate(new Date(), 'yyyy-MM-dd'));
     console.log(this.point('+')(123, 3));
     console.log(this.$store.getters['Default/height'], this.text);
   },
