@@ -1,6 +1,9 @@
 <template>
   <div>
     <el-button type="primary" @click="offDialog">打开</el-button>
+    <div class="vue">
+      Vue单元测试
+    </div>
     <div>{{text}}{{mi}}</div>
     <test-dialog ref="dialogVisble"></test-dialog>
   </div>
@@ -27,7 +30,6 @@ export default {
   computed: {
     ...mapState({
       text: state => {
-        // console.log(vuex)
         return state.Default.clientHeight;
       }
     }),
