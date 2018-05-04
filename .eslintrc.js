@@ -32,8 +32,6 @@ module.exports = {
         'no-debugger': process.env.NODE_ENV === 'production' ? 0 : 0,
         // 关闭语句强制分号结尾
         "semi": [0],
-        //空行最多不能超过100行
-        "no-multiple-empty-lines": [2, { "max": 1 }],
         //关闭禁止混用tab和空格
         "no-mixed-spaces-and-tabs": [0],
         "no-alert": 0,//禁止使用alert confirm prompt
@@ -164,16 +162,16 @@ module.exports = {
         "guard-for-in": 0,//for in循环要用if语句过滤
         "handle-callback-err": 0,//nodejs 处理错误
         "id-length": 0,//变量名长度
-        "indent": [0, 4],//缩进风格
+        "indent": [1, 2],//缩进风格
         "init-declarations": 0,//声明时必须赋初值
         "key-spacing": [0, { "beforeColon": false, "afterColon": true }],//对象字面量中冒号的前后空格
         "lines-around-comment": 0,//行前/行后备注
         "max-depth": [0, 4],//嵌套块深度
         "max-len": [0, 80, 4],//字符串最大长度
         "max-nested-callbacks": [0, 0],//回调嵌套深度
-        "max-params": [0, 3],//函数最多只能有3个参数
+        "max-params": [1, 3],//函数最多只能有3个参数
         "max-statements": [0, 10],//函数内最多有几个声明
-        "new-cap": 0,//函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用
+        "new-cap": 2,//函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用
         "new-parens": 2,//new时必须加小括号
         "newline-after-var": 0,//变量声明后是否需要空一行
         "object-curly-spacing": [0, "never"],//大括号内是否允许不必要的空格
@@ -205,7 +203,7 @@ module.exports = {
         "use-isnan": 0,//禁止比较时使用NaN，只能用isNaN()
         "valid-jsdoc": 0,//jsdoc规则
         "valid-typeof": 0,//必须使用合法的typeof的值
-        "vars-on-top": 0,//var必须放在作用域顶部
+        "vars-on-top": 2,//var必须放在作用域顶部
         "wrap-iife": [0, "inside"],//立即执行函数表达式的小括号风格
         "wrap-regex": 0,//正则表达式字面量用小括号包起来
         "yoda": [0, "never"]//禁止尤达条件
